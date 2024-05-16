@@ -7,6 +7,28 @@
     var percent_slice = 100 / total_images;
     var current_percent = 0;
 
+    var wall = null;
+
+    var option = {
+      selector: ".lightgallery-content-1",
+      animate: true,
+      cellW: 300,
+      cellH: "auto",
+      cacheSize: false,
+      keepOrder: true,
+      onResize: function () {
+        wall.fitWidth();
+      },
+    };
+
+    /*
+    $("#freewall").ready(function () {
+      if (wall == null) {
+        wall = new Freewall("#freewall");
+        wall.reset(option);
+      }
+    });
+*/
     // move info in the same div than the div contening image
     jQuery(".freewall-brick").each(function () {
       jQuery(this)
@@ -22,23 +44,18 @@
 
         if (images_loaded == total_images) {
           console.log("Load freewall");
-          var wall;
-          wall = new Freewall("#freewall");
-          wall.reset({
-            selector: ".lightgallery-content-1",
-            animate: true,
-            cellW: 300,
-            cellH: "auto",
-            cacheSize: false,
-            keepOrder: true,
-            onResize: function () {
-              wall.fitWidth();
-            },
-          });
-          wall.container.find(".freewall-brick img").on("load", function () {
-            wall.fitWidth();
-          });
+          if (wall == null) {
+            wall = new Freewall("#freewall");
+            wall.reset(option);
+          }
+          wall.fitWidth();
         }
+        if (wall != null) {
+        wall.container.find(".freewall-brick img").on("load", function () {
+          wall.fitWidth();
+        });
+      }
+
         // $(".loader-wrapper").hide();
       })
       .each(function () {
@@ -47,7 +64,5 @@
           $(this).trigger("load");
         }
       });
-
-    // $(document).ready(function (e, settings) {
   });
 })(jQuery, Drupal, drupalSettings);
