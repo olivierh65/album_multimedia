@@ -5,7 +5,6 @@ freewall:
     js/freewall/freewall.js: {}
   css:
     component:
-      css/pycs-layout/foundation.min.css: {}
       css/freewall/album-multimedia-style.css: {}
   dependencies:
     - core/drupalSettings
