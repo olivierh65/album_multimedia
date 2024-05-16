@@ -94,9 +94,10 @@ function template_preprocess_album_multimedia_views_style(array &$variables) {
   $variables['items'] = $items;
   $variables['#attached']['drupalSettings']['viewsPhotoGrid']['gridPadding'] = $handler->options['grid_padding'];
   $variables['#attached']['drupalSettings']['viewsPhotoGrid']['maxHeight'] = $handler->options['max_height'];
-  $variables['#attached']['library'][] =  'album_multimedia/freewall';
+  // $variables['#attached']['library'][] =  'album_multimedia/freewall';
   // $variables['#attached']['library'][] =  'album_multimedia/justified_gallery';
   // $variables['#attached']['library'][] =  'album_multimedia/pycs-layout';
+  $variables['#attached']['library'][] =  'album_multimedia/wookmark';
 }
 
 function getEntityValue( $entity) {

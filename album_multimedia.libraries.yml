@@ -1,9 +1,11 @@
 freewall:
   js:
     js/freewall.drupal.js: {}
+    js/pycs-layout/foundation.min.js: {}
     js/freewall/freewall.js: {}
   css:
     component:
+      css/pycs-layout/foundation.min.css: {}
       css/freewall/album-multimedia-style.css: {}
   dependencies:
     - core/drupalSettings
@@ -31,6 +33,19 @@ pycs-layout:
   dependencies:
     - core/drupalSettings
 
+wookmark:
+  js:
+    js/wookmark.drupal.js: {}
+    js/pycs-layout/foundation.min.js: {}
+    js/wookmark/wookmark.js: {}
+
+  css:
+    component:
+      css/pycs-layout/foundation.min.css: {}
+      css/wookmark/main.css: {}
+      css/freewall/album-multimedia-style.css: {}
+  dependencies:
+    - core/drupalSettings
 # Custom library for general purposes.
 example_1:
   js:
