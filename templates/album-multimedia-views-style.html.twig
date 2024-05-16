@@ -1,0 +1,28 @@
+<b>
+	Views Album Multimedia passé</b>
+{# {{ vardumper (items[0]) }} #}
+
+<div id="freewall" class="free-wall">
+{#
+<div class="loader-wrapper">
+        <div class="loader"></div>
+      </div>
+#}
+	{% for album in items %}
+		<div class="freewall-brick">
+			{{ album.markup|raw }}
+			<div class="freewall-info">
+				<div class='album-multimedia-title'>
+					{{album.title}}
+				</div>
+				<div class='album-multimedia-date'>
+					{{album.date}}
+				</div>
+                <div class='album-multimedia-authors'>
+					{{album.authors}}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+</div>

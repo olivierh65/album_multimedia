@@ -1,0 +1,70 @@
+freewall:
+  js:
+    js/freewall.drupal.js: {}
+    js/freewall/freewall.js: {}
+  css:
+    component:
+      css/freewall/album-multimedia-style.css: {}
+  dependencies:
+    - core/drupalSettings
+
+justified_gallery:
+  js:
+    js/justified_gallery.drupal.js: {}
+    js/justified_gallery/jquery.justifiedGallery.min.js: {}
+  css:
+    component:
+      css/justified_gallery/justifiedGallery.min.css: {}
+  dependencies:
+    - core/drupalSettings
+
+pycs-layout:
+  js:
+    js/pycs-layout.drupal.js: {}
+    js/pycs-layout/foundation.min.js: {}
+    js/pycs-layout/pycs-layout.jquery.js: {}
+
+  css:
+    component:
+      css/pycs-layout/foundation.min.css: {}
+      css/freewall/album-multimedia-style.css: {}
+  dependencies:
+    - core/drupalSettings
+
+# Custom library for general purposes.
+example_1:
+  js:
+    js/example-1.js: {}
+  css:
+    component:
+      css/example-1.css: {}
+  dependencies:
+    - core/drupalSettings
+    - album_multimedia/example_2
+
+# Third-party library (self hosted).
+example_2:
+  remote: https://example.com
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://github.com/example/example-2/path/to/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/example-2/source/example-2.js: {}
+  css:
+    component:
+      /libraries/example-2/source/example-2.css: {}
+  dependencies:
+    - core/jquery
+
+# Third-party library (CDN).
+example_3:
+  remote: https://example.com
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://github.com/example/example-3/path/to/LICENSE
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/example/1.0.0/example-3.min.js: {type: external, minified: true}

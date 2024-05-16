@@ -1,0 +1,61 @@
+<b>lightgallery passé</b>
+{{ dump() }}
+{# Begin with video #}
+{% set idx = 1 %}
+{# Lightgallery module generate an uniq id (variable id) to distinguish the videos of each album  #}
+{% for item in items %}
+    {% if item.type|lower == 'video' %}
+        <div  style="display:none;" id="video{{ id ~ "_" ~ idx }}">
+            <video class="lg-video-object lg-html5" controls=""> <source src="{{ item.slide }}" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+        {% set idx = idx + 1 %}
+    {% endif %}
+{% endfor %}
+
+{# then images #}
+{% set idx = 1 %}
+<div class="lightgallery-wrapper">
+<ul class="lightgallery" id="lightgallery-{{ id }}">
+{% set li = 1 %}
+{% for item in items %}
+    {% if item.type|lower == 'video' %}
+        {# if it's a video, reference it #}
+        <li style="list-style-type: none;
+        {% if display == 1 %}
+            {% if li > 1 %}
+                display: none;
+            {% endif %}
+        {% endif %}
+        "
+        data-poster="{{ item.thumb }}" data-sub-html="{{ item.title }}" data-html="#video{{ id ~ "_" ~ idx }}" >
+            <img src="{{ item.thumb }}" alt="{{ item.alt }}"/>
+        {% set idx = idx + 1 %}
+    {% else %}
+        {# images #}
+        <li data-src="{{ item.slide }}" style="list-style-type: none;
+        {% if display == 1 %}
+            {% if li > 1 %}
+                display: none;
+            {% endif %}
+        {% endif %}
+        "
+        data-sub-html="{{ item.title }}">
+            {% if item.field_label is not empty %}
+            <div class="field-label">
+                <label>{{ item.field_label }}</label>
+            </div>
+            {% endif %}
+            <div class="field-content">
+                <a href="">
+                    <img class="img-responsive" src="{{ item.thumb }}" alt="{{ item.alt }}"/>
+                </a>
+            </div>
+        </li>
+    {% endif %}
+    {% set li = li + 1 %}
+{% endfor %}
+</ul>
+</div>
+

@@ -1,0 +1,18 @@
+/* hide title in album ultimedia views */
+.node--view-mode-album-multimedia header {
+	visibility: hidden;
+	height: 0;
+}
+
+.node--view-mode-album-multimedia {
+	position: relative;
+  text-align: center;
+  color: white;
+}
+
+.field--name-field-album-multimedia-date {
+	position: absolute;
+  bottom: 8px;
+  left: 16px;
+  background: rgba(57, 57, 57, 0.5);
+}

@@ -1,0 +1,7 @@
+field.formatter.settings.album_multimedia_vignette_album:
+  type: mapping
+  label: vignette album formatter settings
+  mapping:
+    foo:
+      type: string
+      label: Foo

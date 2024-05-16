@@ -1,0 +1,7 @@
+name: 'Album Multimedia'
+type: module
+description: 'Album multimedia using lightgallery'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - lightgallery:lightgallery

@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Album Multimedia module.
+ */
+/**
+ * Implements hook_theme().
+ */
+function album_multimedia_theme() {
+    return [
+        'album_multimedia_style' => [
+            'variables' => [
+                'theme' => 'album_multimedia_style',
+                'image' => [
+                    'style_name' => NULL,
+                    'attributes' => [
+                        'loading' => NULL,
+                    ],
+                    'uri' => NULL,
+                    'width' => NULL,
+                    'height' => NULL,
+                    'alt' => NULL,
+                ],
+                'album' => [
+                    'title' => NULL,
+                    'target_id' => NULL,
+                    'class' => [
+                        'thumb' => 'aa',
+                    ],
+                    'url' => NULL,
+                    'link' => NULL,
+                    'title' => NULL,
+                    'date' => NULL,
+                    'authors' => NULL,
+                ],
+                'attributes' => [
+                    'width' => NULL,
+                    'height' => NULL,
+                    'image_style' => NULL,
+                    'loading' => NULL,
+                ],
+            ],
+
+
+
+        ],
+    ];
+}
+

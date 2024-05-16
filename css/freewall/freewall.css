@@ -1,0 +1,18 @@
+body {
+    background: rgba(231, 231, 231, 0.43);
+}
+.free-wall {
+    margin: 15px;
+}
+.freewall-brick {
+    width: 221.2px;
+}
+.freewall-info {
+    padding: 15px;
+    color: #333;
+}
+.freewall-brick img {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
